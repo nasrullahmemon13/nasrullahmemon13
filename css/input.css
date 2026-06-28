@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #08060F;
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    outline: 2px solid #38BDF8;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #08060F; }
+::-webkit-scrollbar-thumb { background: #2a2440; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #3d3460; }
+
+/* ---------- preloader ---------- */
+#preloader {
+  position: fixed; inset: 0; z-index: 100;
+  background: #08060F;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+#preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-mark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #8B5CF6, #38BDF8, #F472B6, #8B5CF6);
+  background-size: 300% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradientShift 3s linear infinite;
+}
+
+/* ---------- gradient text ---------- */
+.grad-text {
+  background: linear-gradient(90deg, #8B5CF6, #38BDF8, #F472B6, #8B5CF6);
+  background-size: 300% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradientShift 6s linear infinite;
+}
+@keyframes gradientShift {
+  to { background-position: 300% center; }
+}
+
+/* ---------- aurora blobs ---------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.blob-1 { background: #8B5CF6; width: 420px; height: 420px; top: -120px; left: -100px; animation: float1 16s ease-in-out infinite; }
+.blob-2 { background: #38BDF8; width: 380px; height: 380px; top: 200px; right: -120px; animation: float2 20s ease-in-out infinite; }
+.blob-3 { background: #F472B6; width: 320px; height: 320px; bottom: -100px; left: 30%; animation: float3 18s ease-in-out infinite; }
+
+@keyframes float1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,80px) scale(1.15); } }
+@keyframes float2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-70px,40px) scale(0.9); } }
+@keyframes float3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-60px) scale(1.1); } }
+
+/* ---------- glass ---------- */
+.glass {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.09);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.glass-strong {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ---------- nav ---------- */
+#navPill {
+  position: absolute;
+  transition: left .35s cubic-bezier(.2,.8,.2,1), width .35s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ---------- custom cursor ---------- */
+#cursorDot, #cursorRing {
+  position: fixed; top: 0; left: 0; pointer-events: none; z-index: 90;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+#cursorDot { width: 6px; height: 6px; background: #F472B6; }
+#cursorRing {
+  width: 34px; height: 34px;
+  border: 1px solid rgba(244,242,255,0.4);
+  transition: width .25s ease, height .25s ease, border-color .25s ease, background .25s ease;
+}
+#cursorRing.hovering {
+  width: 56px; height: 56px;
+  border-color: #38BDF8;
+  background: rgba(56,189,248,0.08);
+}
+@media (hover: none), (pointer: coarse) {
+  #cursorDot, #cursorRing { display: none; }
+}
+
+/* ---------- magnetic buttons ---------- */
+.magnetic { transition: transform .25s ease; }
+
+/* ---------- reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal-scale { opacity: 0; transform: scale(.92); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.reveal-scale.in-view { opacity: 1; transform: scale(1); }
+
+/* ---------- marquee ---------- */
+.marquee-track {
+  display: flex; gap: 1rem; width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track.reverse { animation-direction: reverse; animation-duration: 34s; }
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- skill bars ---------- */
+.skill-bar-fill {
+  width: 0%;
+  transition: width 1.1s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ---------- tilt card ---------- */
+.tilt-card { transform-style: preserve-3d; transition: transform .15s ease; }
+
+/* ---------- timeline ---------- */
+.timeline-line {
+  position: absolute; left: 7px; top: 0; width: 2px; height: 0%;
+  background: linear-gradient(180deg, #8B5CF6, #38BDF8, #F472B6);
+  transition: height 1.4s cubic-bezier(.2,.8,.2,1);
+}
+.timeline-dot {
+  transform: scale(0);
+  transition: transform .5s cubic-bezier(.4,1.6,.4,1);
+}
+.timeline-dot.in-view { transform: scale(1); }
+
+/* ---------- counters ---------- */
+.counter { font-variant-numeric: tabular-nums; }
+
+/* ---------- mobile menu ---------- */
+#mobileMenu { transition: opacity .4s ease, visibility .4s ease; }
+#mobileMenu.open { opacity: 1; visibility: visible; }
+#mobileMenu .menu-link {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+#mobileMenu.open .menu-link { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.2s !important; }
+  html { scroll-behavior: auto !important; }
+  .reveal, .reveal-scale { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- letter stagger (hero name) ---------- */
+.letters { display: inline-block; }
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(34px) rotate(6deg);
+  animation: letterIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes letterIn { to { opacity: 1; transform: translateY(0) rotate(0); } }
+
+/* ---------- cursor spotlight ---------- */
+#spotlight {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(139,92,246,0.07), transparent 60%);
+  transition: opacity .3s ease;
+}
+
+/* ---------- ripple ---------- */
+.magnetic, .ripple-host { position: relative; overflow: hidden; }
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  transform: scale(0);
+  animation: rippleAnim .6s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes rippleAnim { to { transform: scale(1); opacity: 0; } }
+
+/* ---------- project gallery ---------- */
+.gallery-frame {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.09);
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .4s ease;
+}
+.gallery-frame:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 50px -20px rgba(139,92,246,0.4);
+  border-color: rgba(139,92,246,0.5);
+}
+.gallery-frame img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.gallery-frame:hover img { transform: scale(1.05); }
+
+/* ---------- chatbot ---------- */
+#chatToggle {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 80;
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #8B5CF6, #38BDF8, #F472B6);
+  box-shadow: 0 10px 30px -8px rgba(139,92,246,0.6);
+  animation: chatPulse 2.6s ease-in-out infinite;
+  border: none; cursor: pointer;
+}
+@keyframes chatPulse {
+  0%, 100% { box-shadow: 0 10px 30px -8px rgba(139,92,246,0.6); }
+  50% { box-shadow: 0 10px 40px -4px rgba(244,114,182,0.7); }
+}
+#chatDot {
+  position: absolute; top: -2px; right: -2px; width: 14px; height: 14px;
+  background: #22c55e; border-radius: 50%; border: 2px solid #08060F;
+}
+#chatWindow {
+  position: fixed; right: 1.25rem; bottom: 5.5rem; z-index: 81;
+  width: min(360px, 90vw); height: min(480px, 70vh);
+  border-radius: 1.25rem; overflow: hidden;
+  display: flex; flex-direction: column;
+  transform-origin: bottom right;
+  transform: scale(0.85) translateY(12px);
+  opacity: 0; visibility: hidden;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .3s ease, visibility .35s ease;
+}
+#chatWindow.open { transform: scale(1) translateY(0); opacity: 1; visibility: visible; }
+
+#chatMessages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
+.msg {
+  max-width: 82%;
+  padding: .55rem .85rem;
+  border-radius: .9rem;
+  font-size: .85rem;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: msgIn .35s ease forwards;
+}
+@keyframes msgIn { to { opacity: 1; transform: translateY(0); } }
+.msg-bot { align-self: flex-start; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); color: #F4F2FF; border-bottom-left-radius: .25rem; }
+.msg-user { align-self: flex-end; background: linear-gradient(135deg, #8B5CF6, #38BDF8); color: #08060F; font-weight: 500; border-bottom-right-radius: .25rem; }
+
+.chip {
+  font-size: .72rem; padding: .35rem .7rem; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05);
+  color: #F4F2FF; cursor: pointer; transition: border-color .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+.chip:hover { border-color: #38BDF8; color: #38BDF8; }
+
+.typing-dots span {
+  display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: #A6A0C7; margin-right: 3px;
+  animation: typingDot 1s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: .15s; }
+.typing-dots span:nth-child(3) { animation-delay: .3s; }
+@keyframes typingDot { 0%, 100% { transform: translateY(0); opacity: .4; } 50% { transform: translateY(-4px); opacity: 1; } }
+
+@media (max-width: 480px) {
+  #chatWindow { right: 0.6rem; bottom: 5rem; }
+  #chatToggle { right: 0.9rem; bottom: 0.9rem; }
+}
+
