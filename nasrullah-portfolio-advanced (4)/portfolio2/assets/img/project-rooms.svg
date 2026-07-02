@@ -1,0 +1,71 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="room" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d2154"/><stop offset="100%" stop-color="#1F1A33"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="18" fill="#0E0B18"/>
+  <rect width="800" height="40" rx="18" fill="#161221"/>
+  <circle cx="24" cy="20" r="5" fill="#FF5F56"/>
+  <circle cx="42" cy="20" r="5" fill="#FFBD2E"/>
+  <circle cx="60" cy="20" r="5" fill="#27C93F"/>
+  <rect x="90" y="11" width="220" height="18" rx="9" fill="#1F1A2E"/>
+
+  <rect x="0" y="40" width="160" height="480" fill="#120E1F"/>
+  <rect x="24" y="64" width="112" height="14" rx="4" fill="url(#g3)"/>
+  <rect x="24" y="140" width="100" height="10" rx="3" fill="#2A2440"/>
+  <rect x="24" y="170" width="90" height="10" rx="3" fill="#3a3158"/>
+  <rect x="24" y="200" width="95" height="10" rx="3" fill="#2A2440"/>
+
+  <rect x="184" y="64" width="200" height="16" rx="4" fill="#E6E1FA"/>
+  <rect x="640" y="60" width="120" height="34" rx="17" fill="url(#g3)"/>
+
+  <!-- room cards grid -->
+  <g>
+    <rect x="184" y="110" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="184" y="110" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="202" y="222" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="202" y="240" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="202" y="256" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+  <g>
+    <rect x="376" y="110" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="376" y="110" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="394" y="222" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="394" y="240" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="394" y="256" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+  <g>
+    <rect x="568" y="110" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="568" y="110" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="586" y="222" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="586" y="240" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="586" y="256" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+
+  <g>
+    <rect x="184" y="300" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="184" y="300" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="202" y="412" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="202" y="430" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="202" y="446" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+  <g>
+    <rect x="376" y="300" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="376" y="300" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="394" y="412" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="394" y="430" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="394" y="446" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+  <g>
+    <rect x="568" y="300" width="176" height="170" rx="14" fill="#181230" stroke="#2A2440"/>
+    <rect x="568" y="300" width="176" height="96" rx="14" fill="url(#room)"/>
+    <rect x="586" y="412" width="90" height="10" rx="3" fill="#E6E1FA"/>
+    <rect x="586" y="430" width="60" height="10" rx="3" fill="#9A95B8"/>
+    <rect x="586" y="446" width="70" height="18" rx="9" fill="url(#g3)"/>
+  </g>
+</svg>
