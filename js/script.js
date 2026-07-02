@@ -54,7 +54,38 @@ if (!isTouch) {
   });
 }
 
-/* ---------------- hero letter stagger ---------------- */
+/* ---------------- dark / light theme toggle ---------------- */
+(function () {
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('nd-theme') || 'dark';
+  if (savedTheme === 'light') html.setAttribute('data-theme', 'light');
+
+  function syncIcons(isLight) {
+    ['iconMoon','iconMoonM'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden', isLight);
+    });
+    ['iconSun','iconSunM'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden', !isLight);
+    });
+  }
+  syncIcons(savedTheme === 'light');
+
+  function toggleTheme() {
+    const isLight = html.getAttribute('data-theme') === 'light';
+    html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+    localStorage.setItem('nd-theme', isLight ? 'dark' : 'light');
+    syncIcons(!isLight);
+  }
+
+  ['themeToggle','themeToggleMobile'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', toggleTheme);
+  });
+})();
+
+
 document.querySelectorAll('.letters').forEach(el => {
   const text = el.textContent;
   el.textContent = '';

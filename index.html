@@ -41,7 +41,7 @@
       <a href="#home" class="font-display font-bold text-lg grad-text">ND.</a>
 
       <nav class="hidden md:flex items-center gap-1 relative font-display text-sm">
-        <div id="navPill" class="absolute inset-y-0 h-full rounded-full bg-white/10 -z-10" style="left:0;width:0;"></div>
+        <div id="navPill" class="absolute inset-y-0 h-full rounded-full bg-line/10 -z-10" style="left:0;width:0;"></div>
         <a href="#home" class="nav-link relative px-4 py-2 text-ink/80 hover:text-ink transition">Home</a>
         <a href="#about" class="nav-link relative px-4 py-2 text-ink/80 hover:text-ink transition">About</a>
         <a href="#skills" class="nav-link relative px-4 py-2 text-ink/80 hover:text-ink transition">Skills</a>
@@ -51,6 +51,11 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-2">
+        <!-- dark/light toggle -->
+        <button id="themeToggle" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center text-ink hover:text-amber transition" title="Toggle light / dark mode" aria-label="Toggle theme">
+          <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
         <a href="assets/cv/Nasrullah-Dilshad-CV.pdf" download class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center text-ink hover:text-blue transition" title="Download CV (PDF)" aria-label="Download CV">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
         </a>
@@ -59,9 +64,15 @@
         </a>
       </div>
 
-      <button id="menuBtn" class="md:hidden text-ink p-2" aria-label="Open menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="themeToggleMobile" class="glass w-9 h-9 rounded-full flex items-center justify-center text-ink" aria-label="Toggle theme">
+          <svg id="iconMoonM" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="iconSunM" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button id="menuBtn" class="text-ink p-2" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
@@ -89,48 +100,78 @@
   <section id="home" class="min-h-screen flex flex-col justify-center pt-28 pb-16 relative">
     <canvas id="constellation" class="absolute inset-0 -z-10 pointer-events-none opacity-70" style="width:100%;height:100%;"></canvas>
 
-    <p class="reveal font-display text-sm tracking-[0.25em] uppercase text-dim mb-5">Hi, I'm</p>
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-    <h1 class="font-display font-bold leading-[0.95] text-[clamp(2.6rem,9vw,5.6rem)] tracking-tight mb-4">
-      <span class="reveal grad-text inline-block">Nasrullah</span><br/><span class="letters">Dilshad</span>
-    </h1>
+      <!-- left: text -->
+      <div>
+        <p class="reveal font-display text-sm tracking-[0.25em] uppercase text-dim mb-5">Hi, I'm</p>
 
-    <div class="reveal flex items-center gap-3 font-display text-xl sm:text-2xl text-dim mb-7 h-8">
-      <span class="w-2 h-2 rounded-full bg-pink"></span>
-      <span id="roleCycler"></span>
+        <h1 class="font-display font-bold leading-[0.95] text-[clamp(2.6rem,9vw,5.6rem)] tracking-tight mb-4">
+          <span class="reveal grad-text inline-block">Nasrullah</span><br/><span class="letters">Dilshad</span>
+        </h1>
+
+        <div class="reveal flex items-center gap-3 font-display text-xl sm:text-2xl text-dim mb-7 h-8">
+          <span class="w-2 h-2 rounded-full bg-pink"></span>
+          <span id="roleCycler"></span>
+        </div>
+
+        <p class="reveal max-w-lg text-dim leading-relaxed mb-9">
+          I build scalable web apps with React &amp; Node.js, cross-platform mobile apps with Flutter,
+          and data-driven dashboards with R. Based in Karachi, Pakistan.
+        </p>
+
+        <div class="reveal flex flex-wrap items-center gap-4 mb-7">
+          <a href="#work" class="magnetic px-6 py-3.5 rounded-full bg-gradient-to-r from-violet via-blue to-pink text-bg font-display font-semibold text-sm">
+            View my work
+          </a>
+          <a href="assets/cv/Nasrullah-Dilshad-CV.pdf" download class="magnetic px-6 py-3.5 rounded-full glass text-ink font-display text-sm inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+            Download CV
+          </a>
+          <a href="#contact" class="magnetic px-6 py-3.5 rounded-full glass text-ink font-display text-sm">
+            Let's talk
+          </a>
+        </div>
+
+        <div class="reveal flex items-center gap-3">
+          <a href="https://github.com/nasrullahmemon13" target="_blank" rel="noopener" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.38-5.25 5.66.42.36.78 1.07.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/nasrullahdilshad" target="_blank" rel="noopener" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          </a>
+          <a href="mailto:nasrullahdilshad0@gmail.com" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="Email">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3V5Zm0 0l9 7 9-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- right: profile photo -->
+      <div class="reveal-scale hidden lg:flex justify-center items-center">
+        <div class="relative">
+          <!-- rotating gradient ring -->
+          <div class="absolute inset-0 rounded-full spin-slow" style="background:conic-gradient(#8B5CF6,#38BDF8,#F472B6,#8B5CF6);padding:3px;border-radius:9999px;">
+            <div class="w-full h-full rounded-full" style="background:rgb(var(--bg-rgb))"></div>
+          </div>
+          <!-- photo -->
+          <div class="relative w-72 h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden ring-4 ring-white/10 z-10" style="margin:3px;">
+            <img src="assets/img/nasrullah-dilshad.jpg" alt="Nasrullah Dilshad" class="w-full h-full object-cover object-top scale-110 hover:scale-105 transition-transform duration-700">
+          </div>
+          <!-- glow behind photo -->
+          <div class="absolute inset-0 rounded-full bg-violet/20 blur-3xl -z-10 scale-125"></div>
+          <!-- floating badges -->
+          <div class="absolute -top-2 -right-4 glass px-3 py-1.5 rounded-full font-display text-xs flex items-center gap-1.5 float-badge">
+            <span class="w-2 h-2 rounded-full bg-green-400"></span> Open to work
+          </div>
+          <div class="absolute -bottom-2 -left-6 glass px-3 py-1.5 rounded-full font-display text-xs flex items-center gap-1.5 float-badge-2">
+            <span class="grad-text font-bold">14+</span> Technologies
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <p class="reveal max-w-lg text-dim leading-relaxed mb-9">
-      I build scalable web apps with React &amp; Node.js, cross-platform mobile apps with Flutter,
-      and data-driven dashboards with R. Based in Karachi, Pakistan.
-    </p>
-
-    <div class="reveal flex flex-wrap items-center gap-4 mb-7">
-      <a href="#work" class="magnetic px-6 py-3.5 rounded-full bg-gradient-to-r from-violet via-blue to-pink text-bg font-display font-semibold text-sm">
-        View my work
-      </a>
-      <a href="assets/cv/Nasrullah-Dilshad-CV.pdf" download class="magnetic px-6 py-3.5 rounded-full glass text-ink font-display text-sm inline-flex items-center gap-2">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
-        Download CV
-      </a>
-      <a href="#contact" class="magnetic px-6 py-3.5 rounded-full glass text-ink font-display text-sm">
-        Let's talk
-      </a>
-    </div>
-
-    <div class="reveal flex items-center gap-3">
-      <a href="https://github.com/nasrullahmemon13" target="_blank" rel="noopener" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="GitHub">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.38-5.25 5.66.42.36.78 1.07.78 2.17v3.22c0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/nasrullahdilshad" target="_blank" rel="noopener" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-      </a>
-      <a href="mailto:nasrullahdilshad0@gmail.com" class="magnetic glass w-10 h-10 rounded-full flex items-center justify-center hover:text-blue transition" aria-label="Email">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3V5Zm0 0l9 7 9-7"/></svg>
-      </a>
-    </div>
-
-    <div class="reveal mt-12 flex items-center gap-2 text-dim text-xs font-display">
+    <div class="reveal mt-14 flex items-center gap-2 text-dim text-xs font-display">
       <svg class="animate-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       scroll to explore
     </div>
@@ -229,19 +270,19 @@
         <div class="space-y-4">
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>HTML5 / CSS3 / JavaScript</span><span class="text-dim text-xs">Expert</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="92"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="92"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>React JS 18</span><span class="text-dim text-xs">Expert</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="92"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="92"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>Bootstrap / jQuery</span><span class="text-dim text-xs">Expert / Proficient</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="85"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-violet to-pink" data-width="85"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>Figma</span><span class="text-dim text-xs">Proficient</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-pink" data-width="75"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-pink" data-width="75"></div></div>
           </div>
         </div>
       </div>
@@ -251,23 +292,23 @@
         <div class="space-y-4">
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>Node.js 20 / Express.js</span><span class="text-dim text-xs">Expert</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="92"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="92"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>MongoDB Atlas</span><span class="text-dim text-xs">Expert</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="92"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="92"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>PHP / ASP.NET &amp; C#</span><span class="text-dim text-xs">Proficient</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="75"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-blue to-violet" data-width="75"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>Flutter / Dart · R Language</span><span class="text-dim text-xs">Proficient</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-pink to-violet" data-width="75"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-pink to-violet" data-width="75"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-sm mb-1.5"><span>MySQL / SQL Server</span><span class="text-dim text-xs">Good</span></div>
-            <div class="h-1.5 rounded-full bg-white/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-pink to-violet" data-width="58"></div></div>
+            <div class="h-1.5 rounded-full bg-line/8"><div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-pink to-violet" data-width="58"></div></div>
           </div>
         </div>
       </div>
@@ -319,7 +360,7 @@
         <span class="px-3 py-1.5 rounded-full glass">Framer Motion</span>
       </div>
 
-      <a href="https://github.com/Nasrullah-ND" target="_blank" rel="noopener" class="magnetic relative inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-violet via-blue to-pink text-bg font-display text-sm font-semibold">
+      <a href="https://github.com/nasrullahmemon13" target="_blank" rel="noopener" class="magnetic relative inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-violet via-blue to-pink text-bg font-display text-sm font-semibold">
         View on GitHub →
       </a>
     </div>
@@ -344,7 +385,7 @@
     <h2 class="reveal font-display font-bold text-3xl sm:text-4xl mb-14">Academic timeline</h2>
 
     <div class="relative pl-10">
-      <div class="absolute left-0 top-1 bottom-1 w-[2px] bg-white/8"></div>
+      <div class="absolute left-0 top-1 bottom-1 w-[2px] bg-line/8"></div>
       <div class="timeline-line"></div>
 
       <div class="relative mb-10">
@@ -413,18 +454,18 @@
       <div class="flex flex-wrap items-center justify-center gap-3 font-display text-xs relative">
         <button data-copy="nasrullahdilshad0@gmail.com" class="copy-btn glass px-4 py-2 rounded-full hover:text-blue transition">nasrullahdilshad0@gmail.com</button>
         <button data-copy="+923161407786" class="copy-btn glass px-4 py-2 rounded-full hover:text-blue transition">+92 316 1407786</button>
-        <a href="https://github.com/Nasrullah-ND" target="_blank" rel="noopener" class="glass px-4 py-2 rounded-full hover:text-blue transition">github.com/Nasrullah-ND</a>
-        <a href="https://www.linkedin.com/in/nasrullah-dilshad-6419a734a" target="_blank" rel="noopener" class="glass px-4 py-2 rounded-full hover:text-blue transition">linkedin.com/in/nasrullah-dilshad</a>
+        <a href="https://github.com/nasrullahmemon13" target="_blank" rel="noopener" class="glass px-4 py-2 rounded-full hover:text-blue transition">github.com/nasrullahmemon13</a>
+        <a href="https://www.linkedin.com/in/nasrullahdilshad" target="_blank" rel="noopener" class="glass px-4 py-2 rounded-full hover:text-blue transition">linkedin.com/in/nasrullah-dilshad</a>
       </div>
     </div>
   </section>
 
-  <footer class="py-10 text-dim text-xs font-display flex flex-col sm:flex-row gap-4 sm:gap-2 justify-between items-center border-t border-white/8">
+  <footer class="py-10 text-dim text-xs font-display flex flex-col sm:flex-row gap-4 sm:gap-2 justify-between items-center border-t border-line/8">
     <p>© <span id="year"></span> Nasrullah Dilshad. Karachi, Pakistan.</p>
     <div class="flex items-center gap-3">
-      <a href="https://github.com/Nasrullah-ND" target="_blank" rel="noopener" class="hover:text-blue transition">GitHub</a>
+      <a href="https://github.com/nasrullahmemon13" target="_blank" rel="noopener" class="hover:text-blue transition">GitHub</a>
       <span>·</span>
-      <a href="https://www.linkedin.com/in/nasrullah-dilshad-6419a734a" target="_blank" rel="noopener" class="hover:text-blue transition">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/nasrullahdilshad" target="_blank" rel="noopener" class="hover:text-blue transition">LinkedIn</a>
       <span>·</span>
       <a href="assets/cv/Nasrullah-Dilshad-CV.pdf" download class="hover:text-blue transition">CV</a>
     </div>
@@ -440,15 +481,18 @@
 </button>
 
 <div id="chatWindow" class="glass-strong">
-  <div class="flex items-center justify-between px-4 py-3 border-b border-white/10">
-    <div class="flex items-center gap-2">
-      <span class="w-8 h-8 rounded-full bg-gradient-to-br from-violet via-blue to-pink flex items-center justify-center font-display text-xs font-bold text-bg">ND</span>
+  <div class="flex items-center gap-2 px-4 py-3 border-b border-line/10">
+    <div class="flex items-center gap-2 flex-1">
+      <span class="w-8 h-8 rounded-full bg-gradient-to-br from-violet via-blue to-pink flex items-center justify-center font-display text-xs font-bold" style="color:#08060F">ND</span>
       <div>
         <p class="font-display text-sm font-semibold leading-tight">ND-Bot</p>
-        <p class="text-dim text-[10px] leading-tight">usually replies instantly</p>
+        <p class="text-[10px] leading-tight" style="color:rgb(var(--dim-rgb))">English &amp; Roman Urdu 🇵🇰 | Voice on</p>
       </div>
     </div>
-    <button id="chatClose" class="text-dim hover:text-ink p-1" aria-label="Close chat">
+    <button id="speakToggle" class="glass w-8 h-8 rounded-full flex items-center justify-center transition" title="Mute bot voice" aria-label="Toggle bot voice">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    </button>
+    <button id="chatClose" class="w-8 h-8 flex items-center justify-center transition" style="color:rgb(var(--dim-rgb))" aria-label="Close chat">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
@@ -457,9 +501,13 @@
 
   <div id="chatChips" class="flex gap-2 px-3 pb-2 overflow-x-auto"></div>
 
-  <form id="chatForm" class="flex items-center gap-2 p-3 border-t border-white/10">
-    <input id="chatInput" type="text" autocomplete="off" placeholder="Ask about skills, project, contact…"
-      class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-ink placeholder:text-dim/70 focus:outline-none focus:border-blue" />
+  <form id="chatForm" class="flex items-center gap-2 p-3 border-t border-line/10">
+    <!-- mic button -->
+    <button type="button" id="micBtn" class="ripple-host w-9 h-9 rounded-full glass flex items-center justify-center shrink-0 transition" title="Speak to ND-Bot (English ya Roman Urdu)" aria-label="Voice input">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+    </button>
+    <input id="chatInput" type="text" autocomplete="off" placeholder="Type ya mic se bolo… (English / Roman Urdu)"
+      class="flex-1 rounded-full px-4 py-2 text-sm focus:outline-none" style="background:var(--surface);border:1px solid var(--border);color:rgb(var(--ink-rgb))" />
     <button type="submit" class="ripple-host w-9 h-9 rounded-full bg-gradient-to-r from-violet via-blue to-pink flex items-center justify-center shrink-0" aria-label="Send">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="#08060F"><path d="M2 21l21-9L2 3v7l15 2-15 2v7Z"/></svg>
     </button>
