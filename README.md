@@ -3,7 +3,7 @@
 <!-- ====================================================== -->
 <!-- 1. HERO BANNER                                         -->
 <!-- ====================================================== -->
-<img src="./assets/banner.svg" alt="Nasrullah Dilshad - Full-Stack Web Developer" width="100%" />
+<img src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/main/assets/banner.svg" alt="Nasrullah Dilshad - Full-Stack Web Developer" width="100%" />
 
 <br/>
 
@@ -99,15 +99,15 @@ I am a **Full-Stack Web Developer** focused on building modern, responsive, and 
 <table border="0">
   <tr>
     <td align="center" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=nasrullahmemon13&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=818cf8&text_color=94a3b8" width="100%" alt="Nasrullah's GitHub Stats" />
+      <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=nasrullahmemon13&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=818cf8&text_color=94a3b8" width="100%" alt="Nasrullah's GitHub Stats" />
     </td>
     <td align="center" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nasrullahmemon13&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=94a3b8" width="100%" alt="Top Languages" />
+      <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=nasrullahmemon13&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=94a3b8" width="100%" alt="Top Languages" />
     </td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=nasrullahmemon13&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=ec4899&currStreakLabel=818cf8" width="100%" alt="GitHub Streak" />
+      <img src="https://streak-stats.demolab.com?user=nasrullahmemon13&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=ec4899&currStreakLabel=818cf8" width="100%" alt="GitHub Streak" />
     </td>
   </tr>
 </table>
