@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 380" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0d1120"/>
+      <stop offset="100%" stop-color="#080914"/>
+    </linearGradient>
+
+    <!-- Text Gradients -->
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="30%" stop-color="#818cf8"/>
+      <stop offset="70%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Chip Gradient -->
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="45" result="blur"/>
+    </filter>
+    <filter id="glowViolet" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="55" result="blur"/>
+    </filter>
+    <filter id="glowPink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="50" result="blur"/>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25"/>
+      <circle cx="40" cy="40" r="1" fill="#818cf8" fill-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; }
+    .title-name { font-weight: 800; letter-spacing: -0.02em; }
+    .badge-text { font-size: 13px; font-weight: 600; fill: #e2e8f0; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1280" height="380" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Ambient Glowing Blobs -->
+  <circle cx="160" cy="80" r="130" fill="#0284c7" opacity="0.25" filter="url(#glowCyan)"/>
+  <circle cx="1120" cy="110" r="150" fill="#8b5cf6" opacity="0.3" filter="url(#glowViolet)"/>
+  <circle cx="640" cy="350" r="160" fill="#db2777" opacity="0.2" filter="url(#glowPink)"/>
+
+  <!-- Grid Overlay -->
+  <rect width="1280" height="380" rx="16" fill="url(#grid)"/>
+
+  <!-- Outer Border Stroke -->
+  <rect x="1" y="1" width="1278" height="378" rx="15" fill="none" stroke="url(#borderGrad)" stroke-width="1.5"/>
+
+  <!-- Corner Tech Markers -->
+  <path d="M 25 45 L 25 25 L 45 25" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.7"/>
+  <path d="M 1255 45 L 1255 25 L 1235 25" fill="none" stroke="#c084fc" stroke-width="2" opacity="0.7"/>
+  <path d="M 25 335 L 25 355 L 45 355" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.7"/>
+  <path d="M 1255 335 L 1255 355 L 1235 355" fill="none" stroke="#ec4899" stroke-width="2" opacity="0.7"/>
+
+  <!-- Top Status Pill -->
+  <g transform="translate(60, 42)">
+    <rect width="330" height="30" rx="15" fill="#0f172a" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="18" cy="15" r="5" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="32" y="20" class="font-mono" font-size="12" font-weight="600" fill="#38bdf8" letter-spacing="1">
+      FULL-STACK DEVELOPER &amp; AI
+    </text>
+  </g>
+
+  <!-- Location & Availability Badge -->
+  <g transform="translate(940, 42)">
+    <rect width="280" height="30" rx="15" fill="#0f172a" fill-opacity="0.85" stroke="#818cf8" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="20" y="20" class="font-mono" font-size="12" font-weight="500" fill="#94a3b8">
+      📍 Karachi, PK  •  Open to Work
+    </text>
+  </g>
+
+  <!-- Hero Name -->
+  <text x="60" y="145" class="font-sans title-name" font-size="56" fill="url(#nameGrad)">
+    NASRULLAH DILSHAD
+  </text>
+
+  <!-- Subtitle -->
+  <text x="62" y="185" class="font-sans" font-size="20" font-weight="500" fill="#f1f5f9">
+    Full-Stack Web Developer <tspan fill="#64748b">•</tspan> React.js &amp; Next.js <tspan fill="#64748b">•</tspan> Node.js &amp; TypeScript <tspan fill="#64748b">•</tspan> MongoDB &amp; AI
+  </text>
+
+  <text x="62" y="215" class="font-sans" font-size="15" font-weight="400" fill="#94a3b8">
+    Crafting high-performance web systems, conversational AI tools, and enterprise full-stack architectures.
+  </text>
+
+  <!-- Tech Stack Chips Bar -->
+  <g transform="translate(60, 248)">
+    <!-- React.js -->
+    <g transform="translate(0, 0)">
+      <rect width="112" height="36" rx="8" fill="url(#chipGrad)" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#38bdf8"/>
+      <text x="34" y="23" class="font-sans badge-text">React.js</text>
+    </g>
+
+    <!-- Next.js -->
+    <g transform="translate(122, 0)">
+      <rect width="105" height="36" rx="8" fill="url(#chipGrad)" stroke="#94a3b8" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#ffffff"/>
+      <text x="32" y="23" class="font-sans badge-text">Next.js</text>
+    </g>
+
+    <!-- Node.js -->
+    <g transform="translate(237, 0)">
+      <rect width="110" height="36" rx="8" fill="url(#chipGrad)" stroke="#22c55e" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#22c55e"/>
+      <text x="34" y="23" class="font-sans badge-text">Node.js</text>
+    </g>
+
+    <!-- TypeScript -->
+    <g transform="translate(357, 0)">
+      <rect width="128" height="36" rx="8" fill="url(#chipGrad)" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#3b82f6"/>
+      <text x="33" y="23" class="font-sans badge-text">TypeScript</text>
+    </g>
+
+    <!-- MongoDB -->
+    <g transform="translate(495, 0)">
+      <rect width="118" height="36" rx="8" fill="url(#chipGrad)" stroke="#10b981" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#10b981"/>
+      <text x="34" y="23" class="font-sans badge-text">MongoDB</text>
+    </g>
+
+    <!-- AI & GenAI -->
+    <g transform="translate(623, 0)">
+      <rect width="140" height="36" rx="8" fill="url(#chipGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.6"/>
+      <circle cx="20" cy="18" r="5" fill="#c084fc"/>
+      <text x="34" y="23" class="font-sans badge-text">AI &amp; GenAI</text>
+    </g>
+
+    <!-- Flutter -->
+    <g transform="translate(773, 0)">
+      <rect width="104" height="36" rx="8" fill="url(#chipGrad)" stroke="#0284c7" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#38bdf8"/>
+      <text x="32" y="23" class="font-sans badge-text">Flutter</text>
+    </g>
+
+    <!-- Tailwind -->
+    <g transform="translate(887, 0)">
+      <rect width="116" height="36" rx="8" fill="url(#chipGrad)" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#06b6d4"/>
+      <text x="34" y="23" class="font-sans badge-text">Tailwind</text>
+    </g>
+
+    <!-- Cloud & Git -->
+    <g transform="translate(1013, 0)">
+      <rect width="145" height="36" rx="8" fill="url(#chipGrad)" stroke="#f97316" stroke-width="1" stroke-opacity="0.5"/>
+      <circle cx="20" cy="18" r="5" fill="#f97316"/>
+      <text x="34" y="23" class="font-sans badge-text">Cloud &amp; Git</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Strip -->
+  <rect x="60" y="322" width="1160" height="1" fill="#334155" opacity="0.6"/>
+  
+  <g transform="translate(60, 347)">
+    <text class="font-mono" font-size="12" fill="#64748b">
+      ACADEMICS: <tspan fill="#94a3b8">BS Computer Science (VU)</tspan> &amp; <tspan fill="#94a3b8">ADSE (Aptech)</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(980, 347)">
+    <text class="font-mono" font-size="12" fill="#64748b">
+      GITHUB: <tspan fill="#38bdf8">@nasrullahmemon13</tspan>
+    </text>
+  </g>
+</svg>
