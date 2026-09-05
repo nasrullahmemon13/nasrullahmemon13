@@ -1,33 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="607" viewBox="0 0 1180 607" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" role="img" aria-label="Projects">
 <rect width="1180" height="607" fill="#0A101F"/>
 <defs>
+  <!-- Animated Rotating Header Line -->
   <linearGradient id="acc_dark" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#7C3AED"><animate attributeName="stop-color" values="#7C3AED;#22D3EE;#10B981;#7C3AED" dur="10s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#7C3AED;#22D3EE;#10B981" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="0" stop-color="#7C3AED"><animate attributeName="stop-color" values="#7C3AED;#22D3EE;#10B981;#7C3AED" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="50%" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#10B981;#7C3AED;#22D3EE" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="100%" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#7C3AED;#22D3EE;#10B981" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
+
+  <!-- Card Border Circuit Flow -->
+  <linearGradient id="cardCircuitCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#22D3EE"/>
+    <stop offset="100%" stop-color="#7C3AED"/>
+  </linearGradient>
+
+  <linearGradient id="cardCircuitViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#A78BFA"/>
+    <stop offset="100%" stop-color="#34D399"/>
+  </linearGradient>
+
+  <linearGradient id="cardCircuitGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#10B981"/>
+    <stop offset="100%" stop-color="#22D3EE"/>
+  </linearGradient>
+
+  <!-- Glow filter -->
+  <filter id="ringGlow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
 </defs>
 
+<!-- Header Title with Pulsing Status -->
 <text x="7" y="18" font-size="11" letter-spacing="2" fill="#22D3EE">PROJECTS.LIST</text>
 <text x="135" y="18" font-size="10" fill="#475569">./projects.sh --all</text>
-<line x1="5" y1="28" x2="1175" y2="28" stroke="url(#acc_dark)" stroke-width="1.5" opacity="0.7"/>
+<line x1="5" y1="28" x2="1175" y2="28" stroke="url(#acc_dark)" stroke-width="2" opacity="0.85"/>
 
 <!-- ============================================== -->
 <!-- CARD 1: Inside-Hunters-SFC (Col 1, Row 1)       -->
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13/Inside-Hunters-SFC" target="_blank">
   <g transform="translate(5, 42)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(34,211,238,0.28)">
-      <animate attributeName="stroke" values="rgba(34,211,238,0.22);rgba(34,211,238,0.55);rgba(34,211,238,0.22)" dur="4.5s" repeatCount="indefinite"/>
+    <!-- Base Card Background -->
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(34,211,238,0.25)"/>
+
+    <!-- ANIMATED RUNNING CIRCUIT BORDER -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitCyan)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="6s" repeatCount="indefinite"/>
     </rect>
+
+    <!-- Card Top Header Bar -->
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#22D3EE">&#8226;</tspan> nasrullahmemon13/Inside-Hunters-SFC</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(124,58,237,0.3)" stroke="#A78BFA" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">🤖</text>
+    <!-- Pulsing Radar Ping Beacon -->
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
+
+    <!-- Floating Icon with Sine Animation -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(124,58,237,0.3)" stroke="#A78BFA" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">🤖</text>
+    </g>
 
     <!-- Title & Desc -->
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">Inside-Hunters-SFC<tspan fill="#22D3EE">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></tspan></text>
@@ -39,9 +79,11 @@
     <rect x="196" y="118" width="66" height="17" rx="8.5" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.5)"/><text x="229" y="130" text-anchor="middle" font-size="9.5" fill="#10B981">MongoDB</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">Vercel Live App</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress Circle with Breathing Glow -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="144 25" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="144 25" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">85%</text>
     <circle cx="401" cy="68" r="3.5" fill="#22D3EE"/><text x="410" y="72" font-size="10" fill="#94A3B8">Python 85%</text>
     <circle cx="401" cy="86" r="3.5" fill="#A78BFA"/><text x="410" y="90" font-size="10" fill="#94A3B8">HTML 15%</text>
@@ -53,20 +95,31 @@
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13" target="_blank">
   <g transform="translate(597, 42)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(167,139,250,0.28)">
-      <animate attributeName="stroke" values="rgba(167,139,250,0.22);rgba(167,139,250,0.55);rgba(167,139,250,0.22)" dur="4.5s" begin="0.5s" repeatCount="indefinite"/>
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(167,139,250,0.25)"/>
+
+    <!-- Running Circuit -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitViolet)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="6.5s" repeatCount="indefinite"/>
     </rect>
+
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#A78BFA">&#8226;</tspan> nasrullahmemon13/LuxuryStay</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(34,211,238,0.3)" stroke="#22D3EE" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">🏨</text>
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
 
-    <!-- Title & Desc -->
+    <!-- Floating Icon -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.8s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(34,211,238,0.3)" stroke="#22D3EE" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">🏨</text>
+    </g>
+
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">LuxuryStay<tspan fill="#A78BFA">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></tspan></text>
     <text x="68" y="80" font-size="11" fill="#94A3B8">Full-Stack Hotel Management Platform</text>
 
@@ -76,9 +129,11 @@
     <rect x="196" y="118" width="66" height="17" rx="8.5" fill="rgba(124,58,237,0.28)" stroke="rgba(167,139,250,0.5)"/><text x="229" y="130" text-anchor="middle" font-size="9.5" fill="#A78BFA">MongoDB</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">Aptech Capstone</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#A78BFA" stroke-width="9" stroke-dasharray="139 30" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#A78BFA" stroke-width="9" stroke-dasharray="139 30" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">82%</text>
     <circle cx="401" cy="68" r="3.5" fill="#A78BFA"/><text x="410" y="72" font-size="10" fill="#94A3B8">React 82%</text>
     <circle cx="401" cy="86" r="3.5" fill="#22D3EE"/><text x="410" y="90" font-size="10" fill="#94A3B8">CSS 18%</text>
@@ -90,20 +145,31 @@
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13/ElevateX-Fitness" target="_blank">
   <g transform="translate(5, 230)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(16,185,129,0.28)">
-      <animate attributeName="stroke" values="rgba(16,185,129,0.22);rgba(16,185,129,0.55);rgba(16,185,129,0.22)" dur="4.5s" begin="0.8s" repeatCount="indefinite"/>
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(16,185,129,0.25)"/>
+
+    <!-- Running Circuit -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitGreen)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="7s" repeatCount="indefinite"/>
     </rect>
+
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#10B981">&#8226;</tspan> nasrullahmemon13/ElevateX-Fitness</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(16,185,129,0.3)" stroke="#10B981" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">🏋️</text>
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
 
-    <!-- Title & Desc -->
+    <!-- Floating Icon -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.6s" begin="0.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(16,185,129,0.3)" stroke="#10B981" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">🏋️</text>
+    </g>
+
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">ElevateX-Fitness<tspan fill="#10B981">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="0.6s" repeatCount="indefinite"/></tspan></text>
     <text x="68" y="80" font-size="11" fill="#94A3B8">Gym &amp; Wellness Club Multi-Page Web Portal</text>
 
@@ -113,9 +179,11 @@
     <rect x="206" y="118" width="56" height="17" rx="8.5" fill="rgba(124,58,237,0.28)" stroke="rgba(167,139,250,0.5)"/><text x="234" y="130" text-anchor="middle" font-size="9.5" fill="#A78BFA">HTML5</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">GitHub Pages Live</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#10B981" stroke-width="9" stroke-dasharray="127 42" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#10B981" stroke-width="9" stroke-dasharray="127 42" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">75%</text>
     <circle cx="401" cy="68" r="3.5" fill="#10B981"/><text x="410" y="72" font-size="10" fill="#94A3B8">HTML 75%</text>
     <circle cx="401" cy="86" r="3.5" fill="#22D3EE"/><text x="410" y="90" font-size="10" fill="#94A3B8">CSS 25%</text>
@@ -123,24 +191,35 @@
 </a>
 
 <!-- ============================================== -->
-<!-- CARD 4: Aurora Portfolio & ND-Bot (Col 2, Row 2)-->
+<!-- CARD 4: Aurora Portfolio (Col 2, Row 2)        -->
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13/nasrullahmemon13" target="_blank">
   <g transform="translate(597, 230)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(34,211,238,0.28)">
-      <animate attributeName="stroke" values="rgba(34,211,238,0.22);rgba(34,211,238,0.55);rgba(34,211,238,0.22)" dur="4.5s" begin="1.1s" repeatCount="indefinite"/>
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(34,211,238,0.25)"/>
+
+    <!-- Running Circuit -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitCyan)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="6.2s" repeatCount="indefinite"/>
     </rect>
+
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#22D3EE">&#8226;</tspan> nasrullahmemon13/nasrullahmemon13</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(124,58,237,0.3)" stroke="#A78BFA" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">✨</text>
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
 
-    <!-- Title & Desc -->
+    <!-- Floating Icon -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(124,58,237,0.3)" stroke="#A78BFA" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">✨</text>
+    </g>
+
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">Aurora Portfolio &amp; ND-Bot<tspan fill="#22D3EE">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="0.9s" repeatCount="indefinite"/></tspan></text>
     <text x="68" y="80" font-size="11" fill="#94A3B8">Interactive Web App with Voice AI Assistant</text>
 
@@ -150,9 +229,11 @@
     <rect x="212" y="118" width="56" height="17" rx="8.5" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.5)"/><text x="240" y="130" text-anchor="middle" font-size="9.5" fill="#10B981">Canvas</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">Bilingual Voice Bot</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="115 54" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="115 54" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">68%</text>
     <circle cx="401" cy="68" r="3.5" fill="#22D3EE"/><text x="410" y="72" font-size="10" fill="#94A3B8">JS 68%</text>
     <circle cx="401" cy="86" r="3.5" fill="#A78BFA"/><text x="410" y="90" font-size="10" fill="#94A3B8">CSS 32%</text>
@@ -164,20 +245,31 @@
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13/assigment-sevices-provider-for-home" target="_blank">
   <g transform="translate(5, 418)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(167,139,250,0.28)">
-      <animate attributeName="stroke" values="rgba(167,139,250,0.22);rgba(167,139,250,0.55);rgba(167,139,250,0.22)" dur="4.5s" begin="1.4s" repeatCount="indefinite"/>
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(167,139,250,0.25)"/>
+
+    <!-- Running Circuit -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitViolet)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="6.8s" repeatCount="indefinite"/>
     </rect>
+
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#A78BFA">&#8226;</tspan> nasrullahmemon13/assigment-sevices-provider-for-home</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(245,158,11,0.3)" stroke="#F59E0B" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">🛠️</text>
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
 
-    <!-- Title & Desc -->
+    <!-- Floating Icon -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.5s" begin="0.2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(245,158,11,0.3)" stroke="#F59E0B" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">🛠️</text>
+    </g>
+
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">Home Services Platform<tspan fill="#F59E0B">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="1.2s" repeatCount="indefinite"/></tspan></text>
     <text x="68" y="80" font-size="11" fill="#94A3B8">On-Demand Residential Repair &amp; Maintenance</text>
 
@@ -187,9 +279,11 @@
     <rect x="206" y="118" width="56" height="17" rx="8.5" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.5)"/><text x="234" y="130" text-anchor="middle" font-size="9.5" fill="#10B981">JSON</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">Booking System</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#F59E0B" stroke-width="9" stroke-dasharray="118 51" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#F59E0B" stroke-width="9" stroke-dasharray="118 51" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">70%</text>
     <circle cx="401" cy="68" r="3.5" fill="#F59E0B"/><text x="410" y="72" font-size="10" fill="#94A3B8">HTML 70%</text>
     <circle cx="401" cy="86" r="3.5" fill="#22D3EE"/><text x="410" y="90" font-size="10" fill="#94A3B8">JS 30%</text>
@@ -201,20 +295,31 @@
 <!-- ============================================== -->
 <a href="https://github.com/nasrullahmemon13/Portfolio-N" target="_blank">
   <g transform="translate(597, 418)">
-    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(16,185,129,0.28)">
-      <animate attributeName="stroke" values="rgba(16,185,129,0.22);rgba(16,185,129,0.55);rgba(16,185,129,0.22)" dur="4.5s" begin="1.7s" repeatCount="indefinite"/>
+    <rect width="578" height="168" rx="12" fill="#0C1426" stroke="rgba(16,185,129,0.25)"/>
+
+    <!-- Running Circuit -->
+    <rect width="578" height="168" rx="12" fill="none" stroke="url(#cardCircuitGreen)" stroke-width="1.8" stroke-dasharray="40 120" opacity="0.75">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="6.4s" repeatCount="indefinite"/>
     </rect>
+
     <rect width="578" height="30" rx="12" fill="#0B1222"/>
     <rect y="18" width="578" height="12" fill="#0B1222"/>
     <line x1="0" y1="30" x2="578" y2="30" stroke="rgba(255,255,255,0.08)"/>
     <text x="16" y="19" font-size="10" fill="#94A3B8"><tspan fill="#10B981">&#8226;</tspan> nasrullahmemon13/Portfolio-N</text>
-    <circle cx="562" cy="15" r="3.5" fill="#10B981"><animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
     
-    <!-- Icon -->
-    <circle cx="36" cy="64" r="18" fill="rgba(34,211,238,0.3)" stroke="#22D3EE" stroke-width="1"/>
-    <text x="36" y="70" text-anchor="middle" font-size="18">🌐</text>
+    <circle cx="562" cy="15" r="7" fill="none" stroke="#10B981" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="3.5;10" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="562" cy="15" r="3.5" fill="#10B981"/>
 
-    <!-- Title & Desc -->
+    <!-- Floating Icon -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="3.7s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+      <circle cx="36" cy="64" r="18" fill="rgba(34,211,238,0.3)" stroke="#22D3EE" stroke-width="1"/>
+      <text x="36" y="70" text-anchor="middle" font-size="18">🌐</text>
+    </g>
+
     <text x="68" y="61" font-size="17" font-weight="700" fill="#F8FAFC">Portfolio-N<tspan fill="#10B981">_<animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="1.5s" repeatCount="indefinite"/></tspan></text>
     <text x="68" y="80" font-size="11" fill="#94A3B8">Client-Side Architecture &amp; UI Portfolio</text>
 
@@ -224,9 +329,11 @@
     <rect x="192" y="118" width="60" height="17" rx="8.5" fill="rgba(124,58,237,0.28)" stroke="rgba(167,139,250,0.5)"/><text x="222" y="130" text-anchor="middle" font-size="9.5" fill="#A78BFA">UI/UX</text>
     <text x="68" y="155" font-size="11" fill="#94A3B8"><tspan fill="#22D3EE">&#9733;</tspan> 1<tspan fill="#475569" dx="14">GitHub Pages Live</tspan></text>
 
-    <!-- Radial Progress Circle -->
+    <!-- Radial Progress -->
     <circle cx="520" cy="90" r="27" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="9"/>
-    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="135 34" transform="rotate(-90 520 90)"/>
+    <circle cx="520" cy="90" r="27" fill="none" stroke="#22D3EE" stroke-width="9" stroke-dasharray="135 34" transform="rotate(-90 520 90)" filter="url(#ringGlow)">
+      <animate attributeName="stroke-opacity" values="0.75;1;0.75" dur="3s" begin="1.6s" repeatCount="indefinite"/>
+    </circle>
     <text x="520" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#F8FAFC">80%</text>
     <circle cx="401" cy="68" r="3.5" fill="#22D3EE"/><text x="410" y="72" font-size="10" fill="#94A3B8">HTML 80%</text>
     <circle cx="401" cy="86" r="3.5" fill="#A78BFA"/><text x="410" y="90" font-size="10" fill="#94A3B8">CSS 20%</text>

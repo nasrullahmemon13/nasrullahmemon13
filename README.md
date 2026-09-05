@@ -1,3 +1,10 @@
+<!-- ===== ANIMATED TYPING OVERVIEW ===== -->
+<div align="center">
+  <a href="https://github.com/nasrullahmemon13">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2500&pause=900&color=22D3EE&center=true&vCenter=true&multiline=false&width=780&height=55&lines=%E2%9A%A1+NASRULLAH+DILSHAD+%E2%80%94+FULL-STACK+ARCHITECT;%F0%9F%9A%80+React.js+%E2%80%A2+Next.js+%E2%80%A2+Node.js+%E2%80%A2+TypeScript;%F0%9F%A7%A0+Multi-LLM+Intelligence%3A+OpenAI+%E2%80%A2+Gemini+%E2%80%A2+Groq;%F0%9F%92%BB+Crafting+High-Performance+Scalable+Web+Systems" alt="Animated Typing Header" />
+  </a>
+</div>
+
 <!-- ===== THEME-AWARE HERO BANNER ===== -->
 <div align="center">
   <img width="100%" src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/main/assets/dark.svg" alt="Nasrullah Dilshad — profile.sh --live" />
@@ -87,7 +94,7 @@ The files hosted within this repository (`nasrullahmemon13/nasrullahmemon13`) re
 - `js/script.js` — core animations: preloader, constellation canvas, custom cursor, magnetic buttons, scroll reveals, animated counters, skill bars, 3D tilt card, timeline draw, marquee, mobile menu, parallax blobs, button ripple, cursor spotlight, letter-stagger heading
 - `js/chatbot.js` — a small rule-based JavaScript chatbot ("ND-Bot") that answers visitor questions about skills, the LuxuryStay project, education and contact info
 - `assets/cv/Nasrullah-Dilshad-CV.pdf` — downloadable resume (linked from the navbar, hero, contact section, mobile menu, and footer)
-- `assets/img/project-*.svg` — stylized preview "screenshots" of the LuxuryStay project. These are illustrative mockups, not real screenshots — swap in real PNG/JPG screenshots anytime by replacing these files or updating the `<img src>` paths in the Work section of `index.html`.
+- `assets/img/project-*.svg` — stylized preview "screenshots" of the LuxuryStay project. These are illustrative mockups, not real screenshots (I couldn't pull actual ones from the repo) — swap in real PNG/JPG screenshots anytime by replacing these files or updating the `<img src>` paths in the Work section of `index.html`.
 - `tailwind.config.js` / `package.json` — only needed if you want to rebuild the CSS
 
 #### New in this version
