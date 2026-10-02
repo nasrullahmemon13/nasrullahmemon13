@@ -1,86 +1,41 @@
-<!-- ===== ANIMATED TYPING OVERVIEW ===== -->
 <div align="center">
-  <a href="https://github.com/nasrullahmemon13">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2500&pause=900&color=22D3EE&center=true&vCenter=true&multiline=false&width=780&height=55&lines=%E2%9A%A1+NASRULLAH+DILSHAD+%E2%80%94+FULL-STACK+ARCHITECT;%F0%9F%9A%80+React.js+%E2%80%A2+Next.js+%E2%80%A2+Node.js+%E2%80%A2+TypeScript;%F0%9F%A7%A0+Multi-LLM+Intelligence%3A+OpenAI+%E2%80%A2+Gemini+%E2%80%A2+Groq;%F0%9F%92%BB+Crafting+High-Performance+Scalable+Web+Systems" alt="Animated Typing Header" />
-  </a>
+  <img src="./assets/profile-hero.svg" width="100%" alt="Nasrullah Dilshad — Full-stack developer. Thoughtful interfaces, reliable systems." />
 </div>
 
-<!-- ===== THEME-AWARE HERO BANNER ===== -->
-<div align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/main/assets/dark.svg" alt="Nasrullah Dilshad — profile.sh --live" />
-</div>
+<p align="center">
+  <a href="https://www.linkedin.com/in/nasrullah-dilshad-6419a734a">LinkedIn</a> &nbsp; / &nbsp;
+  <a href="mailto:nasrullahdilshad0@gmail.com">Email</a> &nbsp; / &nbsp;
+  <a href="./assets/cv/Nasrullah-Dilshad-CV.pdf">Resume</a> &nbsp; / &nbsp;
+  <a href="https://orcid.org/0009-0007-7736-7248">ORCID</a>
+</p>
 
-<br/>
+### A little about me
 
-<!-- ===== GITHUB STATS ===== -->
-<div align="center">
+I'm Nasrullah, a full-stack web developer based in Karachi, Pakistan. I build responsive interfaces, backend APIs, and AI-powered web experiences. I care about clean code, useful products, and learning through building.
 
-<!-- Streak — full width (1180px) -->
+- **Frontend:** JavaScript, TypeScript, React, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express, Python, Flask, REST APIs
+- **Data & tools:** MongoDB, Mongoose, SQLite, Git, Postman, Figma
+- **Education:** BS in Computer Science (VU) · ADSE (Aptech)
+
+<img src="./assets/selected-work.svg" width="100%" alt="Selected work: Inside-Hunters-SFC, LuxuryStay, ElevateX-Fitness, and Portfolio-N" />
+
+| Project | Explore |
+| :--- | :--- |
+| Inside-Hunters-SFC — AI meeting intelligence | [View repository](https://github.com/nasrullahmemon13/Inside-Hunters-SFC) |
+| LuxuryStay — Hotel management | [Browse my repositories](https://github.com/nasrullahmemon13?tab=repositories) |
+| ElevateX-Fitness — Fitness web portal | [View repository](https://github.com/nasrullahmemon13/ElevateX-Fitness) |
+| Portfolio-N — Developer portfolio | [View repository](https://github.com/nasrullahmemon13/Portfolio-N) |
+
+<details>
+<summary><b>Contribution activity</b></summary>
+<br />
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=nasrullahmemon13&amp;hide_border=true&amp;background=0A101F&amp;stroke=22D3EE&amp;ring=A78BFA&amp;fire=10B981&amp;currStreakLabel=22D3EE&amp;sideLabels=94A3B8&amp;currStreakNum=F8FAFC&amp;sideNums=F8FAFC&amp;dates=64748B&amp;titleColor=22D3EE&amp;card_width=1180" />
-  <img width="100%" src="https://streak-stats.demolab.com/?user=nasrullahmemon13&amp;hide_border=true&amp;background=0A101F&amp;stroke=22D3EE&amp;ring=A78BFA&amp;fire=10B981&amp;currStreakLabel=22D3EE&amp;sideLabels=94A3B8&amp;currStreakNum=F8FAFC&amp;sideNums=F8FAFC&amp;dates=64748B&amp;titleColor=22D3EE&amp;card_width=1180" alt="Nasrullah's streak" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/output/github-contribution-grid-snake-dark.svg" />
+  <img width="100%" src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/output/github-contribution-grid-snake.svg" alt="Animated GitHub contribution grid" />
 </picture>
+</details>
 
-<br/>
-<br/>
-
-<!-- Stats + Top languages — side by side -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=nasrullahmemon13&amp;show_icons=true&amp;include_all_commits=true&amp;hide_rank=true&amp;hide_border=true&amp;title_color=22D3EE&amp;icon_color=A78BFA&amp;text_color=94A3B8&amp;bg_color=0A101F&amp;card_width=500" />
-  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=nasrullahmemon13&amp;show_icons=true&amp;include_all_commits=true&amp;hide_rank=true&amp;hide_border=true&amp;title_color=22D3EE&amp;icon_color=A78BFA&amp;text_color=94A3B8&amp;bg_color=0A101F&amp;card_width=500" alt="Nasrullah's GitHub stats" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=nasrullahmemon13&amp;layout=compact&amp;langs_count=8&amp;hide_border=true&amp;title_color=22D3EE&amp;text_color=94A3B8&amp;bg_color=0A101F&amp;card_width=500" />
-  <img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=nasrullahmemon13&amp;layout=compact&amp;langs_count=8&amp;hide_border=true&amp;title_color=22D3EE&amp;text_color=94A3B8&amp;bg_color=0A101F&amp;card_width=500" alt="Top languages" />
-</picture>
-
-</div>
-
-<br/>
-
-<!-- ===== CONTRIBUTION SNAKE ===== -->
-<div align="center">
-  <img width="100%" alt="Snake eating my contributions" src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/output/github-contribution-grid-snake-dark.svg" />
-</div>
-
-<br/>
-
-<!-- ===== FEATURED PROJECTS GRID (TOP SCREEN FROM PHOTO) ===== -->
-<div align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/nasrullahmemon13/nasrullahmemon13/main/assets/projects.svg" alt="Nasrullah's Projects Grid" />
-</div>
-
-<br/>
-
-<!-- ===== MINIMALIST SOCIAL BADGES ===== -->
-<div align="center">
-
-<a href="https://www.linkedin.com/in/nasrullah-dilshad-6419a734a">
-  <img src="https://img.shields.io/badge/LinkedIn-0A101F?style=for-the-badge&amp;logoColor=white&amp;labelColor=0A101F&amp;logo=linkedin" alt="LinkedIn" />
-</a>
-&nbsp;&nbsp;
-<a href="https://orcid.org/0009-0007-7736-7248">
-  <img src="https://img.shields.io/badge/ORCID-0A101F?style=for-the-badge&amp;logoColor=A6CE39&amp;labelColor=0A101F&amp;logo=orcid" alt="ORCID" />
-</a>
-&nbsp;&nbsp;
-<a href="mailto:nasrullahdilshad0@gmail.com">
-  <img src="https://img.shields.io/badge/Email-0A101F?style=for-the-badge&amp;logo=gmail&amp;logoColor=10B981&amp;labelColor=0A101F" alt="Email" />
-</a>
-&nbsp;&nbsp;
-<a href="https://wa.me/923161407786">
-  <img src="https://img.shields.io/badge/WhatsApp-0A101F?style=for-the-badge&amp;logo=whatsapp&amp;logoColor=25D366&amp;labelColor=0A101F" alt="WhatsApp" />
-</a>
-&nbsp;&nbsp;
-<a href="https://github.com/nasrullahmemon13">
-  <img src="https://img.shields.io/badge/GitHub-0A101F?style=for-the-badge&amp;logo=github&amp;logoColor=22D3EE&amp;labelColor=0A101F" alt="GitHub" />
-</a>
-
-</div>
-
-<br/>
-<hr style="border: 0; height: 1px; background: rgba(255,255,255,0.08);" />
-
-<!-- ===== 100% PRESERVED REPOSITORY DOCUMENTATION ===== -->
 <details>
 <summary><b>📂 Click to expand preserved repository documentation &amp; architecture notes</b></summary>
 <br/>
@@ -121,6 +76,4 @@ npx tailwindcss -i ./css/input.css -o ./css/style.css --minify
 
 </details>
 
-<p align="center">
-  <sub>Designed &amp; Engineered with ❤️ by <b>Nasrullah Dilshad</b> • © 2026 All Rights Reserved</sub>
-</p>
+<p align="center"><sub>Nasrullah Dilshad · Building with intention.</sub></p>
