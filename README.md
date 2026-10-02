@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/profile-hero.svg" width="100%" alt="Nasrullah Dilshad — Full-stack developer. Thoughtful interfaces, reliable systems." />
+  <img src="./assets/profile-hero-orbit-v2.svg" width="100%" alt="Nasrullah Dilshad — Full-stack developer. Thoughtful interfaces, reliable systems." />
 </div>
 
 <p align="center">
@@ -18,7 +18,7 @@ I'm Nasrullah, a full-stack web developer based in Karachi, Pakistan. I build re
 - **Data & tools:** MongoDB, Mongoose, SQLite, Git, Postman, Figma
 - **Education:** BS in Computer Science (VU) · ADSE (Aptech)
 
-<img src="./assets/selected-work.svg" width="100%" alt="Selected work: Inside-Hunters-SFC, LuxuryStay, ElevateX-Fitness, and Portfolio-N" />
+<img src="./assets/selected-work-motion-v2.svg" width="100%" alt="Selected work: Inside-Hunters-SFC, LuxuryStay, ElevateX-Fitness, and Portfolio-N" />
 
 | Project | Explore |
 | :--- | :--- |

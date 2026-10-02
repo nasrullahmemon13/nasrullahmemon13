@@ -50,7 +50,7 @@ s += '<line x1="48" y1="536" x2="1152" y2="536" stroke="#2c3040"/>'
 for x,label,value in [(48,'FRONTEND','React · Next.js · Tailwind'),(431,'BACKEND','Node.js · Express · MongoDB'),(832,'AI INTEGRATIONS','OpenAI · Gemini · Groq')]:
     s += text(x,570,label,12,'#a29fba',700)+text(x,604,value,18,'#e2e4ec')
 s+='</g></svg>'
-(ROOT/'assets/profile-hero.svg').write_text(s,encoding='utf-8')
+(ROOT/'assets/profile-hero-orbit-v2.svg').write_text(s,encoding='utf-8')
 projects=[('Inside-Hunters-SFC','AI meeting intelligence & document synthesis','Python / Flask / MongoDB'),('LuxuryStay','Full-stack hotel management platform','React / Node.js / MongoDB'),('ElevateX-Fitness','Gym and wellness web portal','Bootstrap / JavaScript'),('Portfolio-N','Personal developer portfolio','JavaScript / Tailwind / Canvas')]
 s=frame(530,'Selected projects by Nasrullah Dilshad')+text(48,59,'SELECTED WORK',15,'#7ce6ce',700)+text(48,103,'Ideas, engineered into experiences.',32,'#f5f3ff',700)
 for i,(name,desc,stack) in enumerate(projects):
@@ -60,12 +60,12 @@ for i,(name,desc,stack) in enumerate(projects):
     s+=f'<circle class="pulse" cx="{x+504}" cy="{y+29}" r="5" fill="#7ce6ce" style="animation-delay:-{i}s"/>'
     s+=text(x+24,y+33,f'0{i+1} / PROJECT',12,'#b7a3ff',700)+text(x+24,y+70,name,25,'#f5f3ff',700)+text(x+24,y+101,desc,17)+text(x+24,y+131,stack,14,'#7ce6ce')
 s+='</g></svg>'
-(ROOT/'assets/selected-work.svg').write_text(s,encoding='utf-8')
+(ROOT/'assets/selected-work-motion-v2.svg').write_text(s,encoding='utf-8')
 old=(ROOT/'README.md').read_text(encoding='utf-8')
 docs_start=old.rfind('<details>')
 docs=old[docs_start:old.index('</details>', docs_start)+len('</details>')]
 readme='''<div align="center">
-  <img src="./assets/profile-hero.svg" width="100%" alt="Nasrullah Dilshad — Full-stack developer. Thoughtful interfaces, reliable systems." />
+  <img src="./assets/profile-hero-orbit-v2.svg" width="100%" alt="Nasrullah Dilshad — Full-stack developer. Thoughtful interfaces, reliable systems." />
 </div>
 
 <p align="center">
@@ -84,7 +84,7 @@ I'm Nasrullah, a full-stack web developer based in Karachi, Pakistan. I build re
 - **Data & tools:** MongoDB, Mongoose, SQLite, Git, Postman, Figma
 - **Education:** BS in Computer Science (VU) · ADSE (Aptech)
 
-<img src="./assets/selected-work.svg" width="100%" alt="Selected work: Inside-Hunters-SFC, LuxuryStay, ElevateX-Fitness, and Portfolio-N" />
+<img src="./assets/selected-work-motion-v2.svg" width="100%" alt="Selected work: Inside-Hunters-SFC, LuxuryStay, ElevateX-Fitness, and Portfolio-N" />
 
 | Project | Explore |
 | :--- | :--- |
@@ -107,8 +107,9 @@ I'm Nasrullah, a full-stack web developer based in Karachi, Pakistan. I build re
 <p align="center"><sub>Nasrullah Dilshad · Building with intention.</sub></p>
 '''
 (ROOT/'README.md').write_text(readme,encoding='utf-8')
-for asset in ['profile-hero.svg','selected-work.svg']:
+for asset in ['profile-hero-orbit-v2.svg','selected-work-motion-v2.svg']:
     ET.parse(ROOT/'assets'/asset)
 print('Generated and XML-validated profile assets; preserved repository documentation.')
+
 
 
